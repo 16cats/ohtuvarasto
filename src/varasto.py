@@ -1,10 +1,18 @@
 class Varasto:
     def __init__(self, tilavuus, alku_saldo = 0):
+    # kun luodaan uusi varasto, annetaan sille tilavuus
+    # eli kuinka iso se on, ja alkuarvo saldolle.
+
+    # seuraavaksi tarkistuksia virhetilanteille.
+
+    # jos joku yrittää tehdä varaston negatiivisella
+    # tilavuudella, korjataan nollaksi. 
         if tilavuus > 0.0:
             self.tilavuus = tilavuus
         else:
             # virheellinen, nollataan
             self.tilavuus = 0.0
+
 
         if alku_saldo < 0.0:
             # virheellinen, nollataan
